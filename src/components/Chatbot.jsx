@@ -11,12 +11,12 @@ function Chatbot() {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
 
-  // 🔽 Auto-scroll to bottom when new message comes
+  
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // 🧠 BOT LOGIC
+ 
   const getBotReply = (text) => {
     const msg = text.toLowerCase();
 
@@ -79,7 +79,7 @@ function Chatbot() {
     );
   };
 
-  // 🚀 SEND MESSAGE
+  
   const sendMessage = () => {
     if (!input.trim()) return;
 
@@ -141,3 +141,4 @@ function Chatbot() {
 }
 
 export default Chatbot;
+
