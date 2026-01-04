@@ -22,7 +22,7 @@ function App() {
 
   const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
-  // 🔐 Listen to auth state ONCE
+ 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       setUser(firebaseUser);
@@ -30,7 +30,7 @@ function App() {
     return unsubscribe;
   }, []);
 
-  // 📦 Fetch listings
+  
   const refreshListings = async () => {
     const res = await fetch(`${API_BASE}/listings`);
     const data = await res.json();
